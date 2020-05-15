@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134E4F8770365F1BC2757919 /* Pods_FindFalcone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9901F6DEABF02ECCA4EDA15 /* Pods_FindFalcone.framework */; };
+		8B66BD5877BD82CBE9E4D011 /* Pods_FindFalcone_FindFalconeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111417FDD077A679080B1956 /* Pods_FindFalcone_FindFalconeTests.framework */; };
 		91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888B9246E96A100D603D7 /* AppDelegate.swift */; };
 		91F888BC246E96A100D603D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BB246E96A100D603D7 /* SceneDelegate.swift */; };
 		91F888BE246E96A100D603D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		111417FDD077A679080B1956 /* Pods_FindFalcone_FindFalconeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindFalcone_FindFalconeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		147EADDF42F2B7CBC7584440 /* Pods-FindFalcone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindFalcone.debug.xcconfig"; path = "Target Support Files/Pods-FindFalcone/Pods-FindFalcone.debug.xcconfig"; sourceTree = "<group>"; };
 		91F888B6246E96A100D603D7 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888B9246E96A100D603D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91F888BB246E96A100D603D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		91F888CC246E96A200D603D7 /* FindFalconeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindFalconeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888D0246E96A200D603D7 /* FindFalconeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconeTests.swift; sourceTree = "<group>"; };
 		91F888D2246E96A200D603D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D596EE912791218E54DF0A31 /* Pods-FindFalcone-FindFalconeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindFalcone-FindFalconeTests.debug.xcconfig"; path = "Target Support Files/Pods-FindFalcone-FindFalconeTests/Pods-FindFalcone-FindFalconeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9901F6DEABF02ECCA4EDA15 /* Pods_FindFalcone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindFalcone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4DB3DDCD14ABCBCE5DC9DA /* Pods-FindFalcone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindFalcone.release.xcconfig"; path = "Target Support Files/Pods-FindFalcone/Pods-FindFalcone.release.xcconfig"; sourceTree = "<group>"; };
+		E9E1636268DE4390F6E2B165 /* Pods-FindFalcone-FindFalconeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindFalcone-FindFalconeTests.release.xcconfig"; path = "Target Support Files/Pods-FindFalcone-FindFalconeTests/Pods-FindFalcone-FindFalconeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				134E4F8770365F1BC2757919 /* Pods_FindFalcone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B66BD5877BD82CBE9E4D011 /* Pods_FindFalcone_FindFalconeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CC84ED202A4C192EEACC7C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				147EADDF42F2B7CBC7584440 /* Pods-FindFalcone.debug.xcconfig */,
+				DB4DB3DDCD14ABCBCE5DC9DA /* Pods-FindFalcone.release.xcconfig */,
+				D596EE912791218E54DF0A31 /* Pods-FindFalcone-FindFalconeTests.debug.xcconfig */,
+				E9E1636268DE4390F6E2B165 /* Pods-FindFalcone-FindFalconeTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		71497DA1B8F559042AF0A9B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9901F6DEABF02ECCA4EDA15 /* Pods_FindFalcone.framework */,
+				111417FDD077A679080B1956 /* Pods_FindFalcone_FindFalconeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		91F888AD246E96A100D603D7 = {
 			isa = PBXGroup;
 			children = (
 				91F888B8246E96A100D603D7 /* FindFalcone */,
 				91F888CF246E96A200D603D7 /* FindFalconeTests */,
 				91F888B7246E96A100D603D7 /* Products */,
+				6CC84ED202A4C192EEACC7C5 /* Pods */,
+				71497DA1B8F559042AF0A9B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91F888D5246E96A200D603D7 /* Build configuration list for PBXNativeTarget "FindFalcone" */;
 			buildPhases = (
+				6098719C2110696FCE184ECD /* [CP] Check Pods Manifest.lock */,
 				91F888B2246E96A100D603D7 /* Sources */,
 				91F888B3246E96A100D603D7 /* Frameworks */,
 				91F888B4246E96A100D603D7 /* Resources */,
+				EAEC36017E889CA4C9E9C578 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91F888D8246E96A200D603D7 /* Build configuration list for PBXNativeTarget "FindFalconeTests" */;
 			buildPhases = (
+				182C57047582396C96C0F54A /* [CP] Check Pods Manifest.lock */,
 				91F888C8246E96A200D603D7 /* Sources */,
 				91F888C9246E96A200D603D7 /* Frameworks */,
 				91F888CA246E96A200D603D7 /* Resources */,
+				DF88E4EA0D951A94F0F29BA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +231,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		182C57047582396C96C0F54A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindFalcone-FindFalconeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6098719C2110696FCE184ECD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindFalcone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF88E4EA0D951A94F0F29BA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindFalcone-FindFalconeTests/Pods-FindFalcone-FindFalconeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindFalcone-FindFalconeTests/Pods-FindFalcone-FindFalconeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindFalcone-FindFalconeTests/Pods-FindFalcone-FindFalconeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAEC36017E889CA4C9E9C578 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindFalcone/Pods-FindFalcone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindFalcone/Pods-FindFalcone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindFalcone/Pods-FindFalcone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		91F888B2246E96A100D603D7 /* Sources */ = {
@@ -360,6 +478,7 @@
 		};
 		91F888D6246E96A200D603D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 147EADDF42F2B7CBC7584440 /* Pods-FindFalcone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +497,7 @@
 		};
 		91F888D7246E96A200D603D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB4DB3DDCD14ABCBCE5DC9DA /* Pods-FindFalcone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +516,7 @@
 		};
 		91F888D9246E96A200D603D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D596EE912791218E54DF0A31 /* Pods-FindFalcone-FindFalconeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +539,7 @@
 		};
 		91F888DA246E96A200D603D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E1636268DE4390F6E2B165 /* Pods-FindFalcone-FindFalconeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
