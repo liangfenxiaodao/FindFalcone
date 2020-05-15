@@ -1,5 +1,5 @@
 //
-//  GalaxyUseCase.swift
+//  DestinationUseCase.swift
 //  FindFalcone
 //
 //  Created by Jacky Li on 15/5/20.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class GalaxyUseCase {
+class DestinationUseCase {
     let falconeProvider = FalconeProvider()
 
     func getPlanets() -> Observable<[Planet]> {

@@ -13,11 +13,10 @@
 		91760508246E9EB700C3ABFC /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91760507246E9EB700C3ABFC /* Planet.swift */; };
 		9176050A246E9EC200C3ABFC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91760509246E9EC200C3ABFC /* Vehicle.swift */; };
 		9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176050B246E9F7800C3ABFC /* FalconeProvider.swift */; };
-		9176050E246EA96700C3ABFC /* GalaxyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176050D246EA96700C3ABFC /* GalaxyUseCase.swift */; };
+		9176050E246EA96700C3ABFC /* DestinationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176050D246EA96700C3ABFC /* DestinationUseCase.swift */; };
 		91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888B9246E96A100D603D7 /* AppDelegate.swift */; };
-		91F888BC246E96A100D603D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BB246E96A100D603D7 /* SceneDelegate.swift */; };
-		91F888BE246E96A100D603D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* ViewController.swift */; };
-		91F888C1246E96A100D603D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888BF246E96A100D603D7 /* Main.storyboard */; };
+		91F888BE246E96A100D603D7 /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* DestinationViewController.swift */; };
+		91F888C1246E96A100D603D7 /* Destination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888BF246E96A100D603D7 /* Destination.storyboard */; };
 		91F888C3246E96A200D603D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F888C2246E96A200D603D7 /* Assets.xcassets */; };
 		91F888C6246E96A200D603D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888C4246E96A200D603D7 /* LaunchScreen.storyboard */; };
 		91F888D1246E96A200D603D7 /* FindFalconeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888D0246E96A200D603D7 /* FindFalconeTests.swift */; };
@@ -40,12 +39,11 @@
 		91760507246E9EB700C3ABFC /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		91760509246E9EC200C3ABFC /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		9176050B246E9F7800C3ABFC /* FalconeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalconeProvider.swift; sourceTree = "<group>"; };
-		9176050D246EA96700C3ABFC /* GalaxyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyUseCase.swift; sourceTree = "<group>"; };
+		9176050D246EA96700C3ABFC /* DestinationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationUseCase.swift; sourceTree = "<group>"; };
+		9176050F246EB1CB00C3ABFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Destination.storyboard; sourceTree = "<group>"; };
 		91F888B6246E96A100D603D7 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888B9246E96A100D603D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91F888BB246E96A100D603D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		91F888BD246E96A100D603D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		91F888C0246E96A100D603D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91F888BD246E96A100D603D7 /* DestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewController.swift; sourceTree = "<group>"; };
 		91F888C2246E96A200D603D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91F888C5246E96A200D603D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91F888C7246E96A200D603D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,7 +109,7 @@
 		91760500246E9B1E00C3ABFC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9176050D246EA96700C3ABFC /* GalaxyUseCase.swift */,
+				9176050D246EA96700C3ABFC /* DestinationUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -119,10 +117,8 @@
 		91760501246E9B4700C3ABFC /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				91760510246EB82C00C3ABFC /* Destination */,
 				91F888B9246E96A100D603D7 /* AppDelegate.swift */,
-				91F888BB246E96A100D603D7 /* SceneDelegate.swift */,
-				91F888BD246E96A100D603D7 /* ViewController.swift */,
-				91F888BF246E96A100D603D7 /* Main.storyboard */,
 				91F888C4246E96A200D603D7 /* LaunchScreen.storyboard */,
 			);
 			path = Application;
@@ -149,6 +145,15 @@
 				91760509246E9EC200C3ABFC /* Vehicle.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		91760510246EB82C00C3ABFC /* Destination */ = {
+			isa = PBXGroup;
+			children = (
+				91F888BD246E96A100D603D7 /* DestinationViewController.swift */,
+				91F888BF246E96A100D603D7 /* Destination.storyboard */,
+			);
+			path = Destination;
 			sourceTree = "<group>";
 		};
 		91F888AD246E96A100D603D7 = {
@@ -281,7 +286,7 @@
 			files = (
 				91F888C6246E96A200D603D7 /* LaunchScreen.storyboard in Resources */,
 				91F888C3246E96A200D603D7 /* Assets.xcassets in Resources */,
-				91F888C1246E96A100D603D7 /* Main.storyboard in Resources */,
+				91F888C1246E96A100D603D7 /* Destination.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,11 +386,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9176050A246E9EC200C3ABFC /* Vehicle.swift in Sources */,
-				91F888BE246E96A100D603D7 /* ViewController.swift in Sources */,
+				91F888BE246E96A100D603D7 /* DestinationViewController.swift in Sources */,
 				91760505246E9B8800C3ABFC /* FalconeAPI.swift in Sources */,
 				91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */,
-				91F888BC246E96A100D603D7 /* SceneDelegate.swift in Sources */,
-				9176050E246EA96700C3ABFC /* GalaxyUseCase.swift in Sources */,
+				9176050E246EA96700C3ABFC /* DestinationUseCase.swift in Sources */,
 				9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */,
 				91760508246E9EB700C3ABFC /* Planet.swift in Sources */,
 			);
@@ -410,12 +414,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		91F888BF246E96A100D603D7 /* Main.storyboard */ = {
+		91F888BF246E96A100D603D7 /* Destination.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				91F888C0246E96A100D603D7 /* Base */,
+				9176050F246EB1CB00C3ABFC /* en */,
 			);
-			name = Main.storyboard;
+			name = Destination.storyboard;
 			sourceTree = "<group>";
 		};
 		91F888C4246E96A200D603D7 /* LaunchScreen.storyboard */ = {

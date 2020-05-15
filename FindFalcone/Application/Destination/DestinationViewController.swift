@@ -9,12 +9,14 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
+class DestinationViewController: UIViewController {
     private var disposeBag: DisposeBag = DisposeBag()
-    private var usecase: GalaxyUseCase = GalaxyUseCase()
+    private var usecase: DestinationUseCase = DestinationUseCase()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.title = "Find Falcone!"
 
         usecase.getPlanets()
             .subscribe(onNext: { planets in
