@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		134E4F8770365F1BC2757919 /* Pods_FindFalcone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9901F6DEABF02ECCA4EDA15 /* Pods_FindFalcone.framework */; };
 		8B66BD5877BD82CBE9E4D011 /* Pods_FindFalcone_FindFalconeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111417FDD077A679080B1956 /* Pods_FindFalcone_FindFalconeTests.framework */; };
+		91760505246E9B8800C3ABFC /* FalconeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91760504246E9B8800C3ABFC /* FalconeAPI.swift */; };
+		91760508246E9EB700C3ABFC /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91760507246E9EB700C3ABFC /* Planet.swift */; };
+		9176050A246E9EC200C3ABFC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91760509246E9EC200C3ABFC /* Vehicle.swift */; };
+		9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176050B246E9F7800C3ABFC /* FalconeProvider.swift */; };
+		9176050E246EA96700C3ABFC /* GalaxyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176050D246EA96700C3ABFC /* GalaxyUseCase.swift */; };
 		91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888B9246E96A100D603D7 /* AppDelegate.swift */; };
 		91F888BC246E96A100D603D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BB246E96A100D603D7 /* SceneDelegate.swift */; };
 		91F888BE246E96A100D603D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* ViewController.swift */; };
@@ -31,6 +36,11 @@
 /* Begin PBXFileReference section */
 		111417FDD077A679080B1956 /* Pods_FindFalcone_FindFalconeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindFalcone_FindFalconeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		147EADDF42F2B7CBC7584440 /* Pods-FindFalcone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindFalcone.debug.xcconfig"; path = "Target Support Files/Pods-FindFalcone/Pods-FindFalcone.debug.xcconfig"; sourceTree = "<group>"; };
+		91760504246E9B8800C3ABFC /* FalconeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalconeAPI.swift; sourceTree = "<group>"; };
+		91760507246E9EB700C3ABFC /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		91760509246E9EC200C3ABFC /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		9176050B246E9F7800C3ABFC /* FalconeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalconeProvider.swift; sourceTree = "<group>"; };
+		9176050D246EA96700C3ABFC /* GalaxyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyUseCase.swift; sourceTree = "<group>"; };
 		91F888B6246E96A100D603D7 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888B9246E96A100D603D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91F888BB246E96A100D603D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +86,6 @@
 				D596EE912791218E54DF0A31 /* Pods-FindFalcone-FindFalconeTests.debug.xcconfig */,
 				E9E1636268DE4390F6E2B165 /* Pods-FindFalcone-FindFalconeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,6 +96,59 @@
 				111417FDD077A679080B1956 /* Pods_FindFalcone_FindFalconeTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		917604FF246E9B1800C3ABFC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				91760506246E9EA400C3ABFC /* Model */,
+				91760504246E9B8800C3ABFC /* FalconeAPI.swift */,
+				9176050B246E9F7800C3ABFC /* FalconeProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		91760500246E9B1E00C3ABFC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9176050D246EA96700C3ABFC /* GalaxyUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		91760501246E9B4700C3ABFC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				91F888B9246E96A100D603D7 /* AppDelegate.swift */,
+				91F888BB246E96A100D603D7 /* SceneDelegate.swift */,
+				91F888BD246E96A100D603D7 /* ViewController.swift */,
+				91F888BF246E96A100D603D7 /* Main.storyboard */,
+				91F888C4246E96A200D603D7 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		91760502246E9B5400C3ABFC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		91760503246E9B5D00C3ABFC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		91760506246E9EA400C3ABFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91760507246E9EB700C3ABFC /* Planet.swift */,
+				91760509246E9EC200C3ABFC /* Vehicle.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		91F888AD246E96A100D603D7 = {
@@ -112,13 +174,13 @@
 		91F888B8246E96A100D603D7 /* FindFalcone */ = {
 			isa = PBXGroup;
 			children = (
-				91F888B9246E96A100D603D7 /* AppDelegate.swift */,
-				91F888BB246E96A100D603D7 /* SceneDelegate.swift */,
-				91F888BD246E96A100D603D7 /* ViewController.swift */,
-				91F888BF246E96A100D603D7 /* Main.storyboard */,
-				91F888C2246E96A200D603D7 /* Assets.xcassets */,
-				91F888C4246E96A200D603D7 /* LaunchScreen.storyboard */,
 				91F888C7246E96A200D603D7 /* Info.plist */,
+				91F888C2246E96A200D603D7 /* Assets.xcassets */,
+				91760501246E9B4700C3ABFC /* Application */,
+				91760502246E9B5400C3ABFC /* Presentation */,
+				91760500246E9B1E00C3ABFC /* Domain */,
+				917604FF246E9B1800C3ABFC /* Data */,
+				91760503246E9B5D00C3ABFC /* Utilities */,
 			);
 			path = FindFalcone;
 			sourceTree = "<group>";
@@ -318,9 +380,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9176050A246E9EC200C3ABFC /* Vehicle.swift in Sources */,
 				91F888BE246E96A100D603D7 /* ViewController.swift in Sources */,
+				91760505246E9B8800C3ABFC /* FalconeAPI.swift in Sources */,
 				91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */,
 				91F888BC246E96A100D603D7 /* SceneDelegate.swift in Sources */,
+				9176050E246EA96700C3ABFC /* GalaxyUseCase.swift in Sources */,
+				9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */,
+				91760508246E9EB700C3ABFC /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
