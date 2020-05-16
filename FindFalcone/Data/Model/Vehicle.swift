@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Vehicle: Codable {
+struct Vehicle: Codable, Equatable {
     let name: String
     let total: Int
     let distance: Int

@@ -14,6 +14,9 @@
 		9176050A246E9EC200C3ABFC /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91760509246E9EC200C3ABFC /* Vehicle.swift */; };
 		9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176050B246E9F7800C3ABFC /* FalconeProvider.swift */; };
 		9176050E246EA96700C3ABFC /* DestinationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176050D246EA96700C3ABFC /* DestinationUseCase.swift */; };
+		91763492246F621300308B7E /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91763491246F621300308B7E /* DestinationViewModel.swift */; };
+		91763496246F630F00308B7E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91763495246F630F00308B7E /* DataStore.swift */; };
+		91763499246F699E00308B7E /* InitialiseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91763498246F699E00308B7E /* InitialiseUseCase.swift */; };
 		91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888B9246E96A100D603D7 /* AppDelegate.swift */; };
 		91F888BE246E96A100D603D7 /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* DestinationViewController.swift */; };
 		91F888C1246E96A100D603D7 /* Destination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888BF246E96A100D603D7 /* Destination.storyboard */; };
@@ -41,6 +44,9 @@
 		9176050B246E9F7800C3ABFC /* FalconeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalconeProvider.swift; sourceTree = "<group>"; };
 		9176050D246EA96700C3ABFC /* DestinationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationUseCase.swift; sourceTree = "<group>"; };
 		9176050F246EB1CB00C3ABFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Destination.storyboard; sourceTree = "<group>"; };
+		91763491246F621300308B7E /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
+		91763495246F630F00308B7E /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		91763498246F699E00308B7E /* InitialiseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialiseUseCase.swift; sourceTree = "<group>"; };
 		91F888B6246E96A100D603D7 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888B9246E96A100D603D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91F888BD246E96A100D603D7 /* DestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewController.swift; sourceTree = "<group>"; };
@@ -99,9 +105,9 @@
 		917604FF246E9B1800C3ABFC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				91763497246F631900308B7E /* Networking */,
 				91760506246E9EA400C3ABFC /* Model */,
-				91760504246E9B8800C3ABFC /* FalconeAPI.swift */,
-				9176050B246E9F7800C3ABFC /* FalconeProvider.swift */,
+				91763494246F62F500308B7E /* Store */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -109,7 +115,7 @@
 		91760500246E9B1E00C3ABFC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9176050D246EA96700C3ABFC /* DestinationUseCase.swift */,
+				91763493246F62ED00308B7E /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -150,10 +156,37 @@
 		91760510246EB82C00C3ABFC /* Destination */ = {
 			isa = PBXGroup;
 			children = (
-				91F888BD246E96A100D603D7 /* DestinationViewController.swift */,
 				91F888BF246E96A100D603D7 /* Destination.storyboard */,
+				91F888BD246E96A100D603D7 /* DestinationViewController.swift */,
+				91763491246F621300308B7E /* DestinationViewModel.swift */,
 			);
 			path = Destination;
+			sourceTree = "<group>";
+		};
+		91763493246F62ED00308B7E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9176050D246EA96700C3ABFC /* DestinationUseCase.swift */,
+				91763498246F699E00308B7E /* InitialiseUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		91763494246F62F500308B7E /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				91763495246F630F00308B7E /* DataStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		91763497246F631900308B7E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				91760504246E9B8800C3ABFC /* FalconeAPI.swift */,
+				9176050B246E9F7800C3ABFC /* FalconeProvider.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		91F888AD246E96A100D603D7 = {
@@ -387,10 +420,13 @@
 			files = (
 				9176050A246E9EC200C3ABFC /* Vehicle.swift in Sources */,
 				91F888BE246E96A100D603D7 /* DestinationViewController.swift in Sources */,
+				91763499246F699E00308B7E /* InitialiseUseCase.swift in Sources */,
 				91760505246E9B8800C3ABFC /* FalconeAPI.swift in Sources */,
+				91763492246F621300308B7E /* DestinationViewModel.swift in Sources */,
 				91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */,
 				9176050E246EA96700C3ABFC /* DestinationUseCase.swift in Sources */,
 				9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */,
+				91763496246F630F00308B7E /* DataStore.swift in Sources */,
 				91760508246E9EB700C3ABFC /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

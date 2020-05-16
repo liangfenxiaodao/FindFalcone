@@ -8,29 +8,23 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class DestinationViewController: UIViewController {
-    private var disposeBag: DisposeBag = DisposeBag()
-    private var usecase: DestinationUseCase = DestinationUseCase()
+    private var viewModel: DestinationViewModel = DestinationViewModel()
+    private let disposeBag = DisposeBag()
+
+    @IBOutlet weak var planetPickerView: UIPickerView!
+    @IBOutlet weak var vehiclePickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         navigationItem.title = "Find Falcone!"
 
-        usecase.getPlanets()
-            .subscribe(onNext: { planets in
-                print(planets)
-            })
-            .disposed(by: disposeBag)
-
-
-        usecase.getVehicles()
-            .subscribe(onNext: { vehicles in
-                print(vehicles)
-            })
+        viewModel.getAvailablePlanets()
+            .bind(to: planetPickerView.rx.itemTitles) { _, planet in
+                return planet.name
+            }
             .disposed(by: disposeBag)
     }
-
 }
-

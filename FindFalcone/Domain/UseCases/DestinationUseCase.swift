@@ -10,13 +10,13 @@ import Foundation
 import RxSwift
 
 class DestinationUseCase {
-    let falconeProvider = FalconeProvider()
+    let disposeBag = DisposeBag()
 
-    func getPlanets() -> Observable<[Planet]> {
-        return falconeProvider.getPlanets()
+    func getAvailablePlanets() -> Observable<[Planet]> {
+        return DataStore.observable(path: \.availablePlanets)
     }
 
     func getVehicles() -> Observable<[Vehicle]> {
-        return falconeProvider.getVehicles()
+        return DataStore.observable(path: \.availableVehicles)
     }
 }

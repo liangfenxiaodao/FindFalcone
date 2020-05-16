@@ -16,38 +16,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHK-Q9-fIR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="380"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select planets you want to search in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbL-JO-6lE" userLabel="titleLabel">
-                                        <rect key="frame" x="69.5" y="40" width="275" height="21"/>
+                                        <rect key="frame" x="69.5" y="40" width="275" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Y61-zI-q8S"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE0-1b-4BI" userLabel="subtitleLabel">
-                                        <rect key="frame" x="163.5" y="81" width="87" height="21"/>
+                                        <rect key="frame" x="163.5" y="80" width="87" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Kmh-Jv-HvI"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBu-Ul-Nfr">
-                                        <rect key="frame" x="47" y="112" width="320" height="216"/>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBu-Ul-Nfr" userLabel="planetPickerView">
+                                        <rect key="frame" x="47" y="140" width="320" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="KaU-1z-x5b"/>
+                                        </constraints>
                                     </pickerView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P71-aK-Q79">
-                                        <rect key="frame" x="47" y="348" width="320" height="216"/>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P71-aK-Q79" userLabel="vehiclePickerView">
+                                        <rect key="frame" x="47" y="290" width="320" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="lMQ-hp-o6H"/>
+                                        </constraints>
                                     </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nl8-Wb-qfx">
+                                        <rect key="frame" x="184" y="430" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="sFU-CT-W67"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="P71-aK-Q79" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="0o5-Tb-lF9"/>
-                                    <constraint firstItem="wbL-JO-6lE" firstAttribute="top" secondItem="SHK-Q9-fIR" secondAttribute="top" constant="40" id="2Qe-1w-l1N"/>
-                                    <constraint firstItem="FE0-1b-4BI" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="5Pv-2R-dIH"/>
-                                    <constraint firstAttribute="bottom" secondItem="P71-aK-Q79" secondAttribute="bottom" constant="20" id="IJy-Nb-kEt"/>
-                                    <constraint firstAttribute="trailing" secondItem="P71-aK-Q79" secondAttribute="trailing" id="R4Q-Hn-wiq"/>
-                                    <constraint firstItem="VBu-Ul-Nfr" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="XUh-B7-YJZ"/>
-                                    <constraint firstItem="P71-aK-Q79" firstAttribute="top" secondItem="VBu-Ul-Nfr" secondAttribute="bottom" constant="20" id="bzG-4O-z6g"/>
-                                    <constraint firstItem="wbL-JO-6lE" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="lZx-lB-CCM"/>
-                                    <constraint firstItem="FE0-1b-4BI" firstAttribute="top" secondItem="wbL-JO-6lE" secondAttribute="bottom" constant="20" id="oBH-4f-jgK"/>
-                                    <constraint firstItem="VBu-Ul-Nfr" firstAttribute="top" secondItem="FE0-1b-4BI" secondAttribute="bottom" constant="10" id="yB4-n0-o1c"/>
+                                    <constraint firstItem="VBu-Ul-Nfr" firstAttribute="width" secondItem="SHK-Q9-fIR" secondAttribute="width" multiplier="0.772947" id="2Ly-5M-CCM"/>
+                                    <constraint firstItem="VBu-Ul-Nfr" firstAttribute="centerY" secondItem="SHK-Q9-fIR" secondAttribute="centerY" id="6AG-r7-OGH"/>
+                                    <constraint firstItem="VBu-Ul-Nfr" firstAttribute="leading" secondItem="P71-aK-Q79" secondAttribute="leading" id="6dI-vP-imy"/>
+                                    <constraint firstItem="VBu-Ul-Nfr" firstAttribute="top" secondItem="FE0-1b-4BI" secondAttribute="bottom" constant="40" id="A6r-U2-09X"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nl8-Wb-qfx" secondAttribute="bottom" constant="40" id="DdP-g4-SIF"/>
+                                    <constraint firstItem="Nl8-Wb-qfx" firstAttribute="top" secondItem="P71-aK-Q79" secondAttribute="bottom" constant="40" id="HWt-AO-Upm"/>
+                                    <constraint firstItem="FE0-1b-4BI" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="LZm-go-zmo"/>
+                                    <constraint firstItem="FE0-1b-4BI" firstAttribute="top" secondItem="wbL-JO-6lE" secondAttribute="bottom" constant="20" id="NL1-Fd-bu2"/>
+                                    <constraint firstItem="wbL-JO-6lE" firstAttribute="top" secondItem="SHK-Q9-fIR" secondAttribute="top" constant="40" id="R6M-hY-lVx"/>
+                                    <constraint firstItem="wbL-JO-6lE" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="Yia-hj-wvj"/>
+                                    <constraint firstItem="P71-aK-Q79" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="bur-Z5-vFu"/>
+                                    <constraint firstAttribute="trailing" secondItem="VBu-Ul-Nfr" secondAttribute="trailing" constant="47" id="n5J-cV-PKl"/>
+                                    <constraint firstItem="P71-aK-Q79" firstAttribute="width" secondItem="SHK-Q9-fIR" secondAttribute="width" multiplier="0.772947" id="oMM-9V-b7p"/>
+                                    <constraint firstItem="P71-aK-Q79" firstAttribute="top" secondItem="VBu-Ul-Nfr" secondAttribute="bottom" constant="50" id="p0x-IO-bdD"/>
+                                    <constraint firstItem="Nl8-Wb-qfx" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="z1P-1B-GtQ"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HBS-Jq-IeV"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="81k-6O-vDL"/>
@@ -55,7 +79,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SHK-Q9-fIR" firstAttribute="height" secondItem="71i-2q-XkW" secondAttribute="height" id="5cF-1c-TGY"/>
                             <constraint firstItem="Ye2-X0-n6Y" firstAttribute="trailing" secondItem="SHK-Q9-fIR" secondAttribute="trailing" id="6KC-3L-TN3"/>
                             <constraint firstItem="SHK-Q9-fIR" firstAttribute="top" secondItem="Ye2-X0-n6Y" secondAttribute="top" id="hTS-g1-CBh"/>
                             <constraint firstItem="SHK-Q9-fIR" firstAttribute="leading" secondItem="Ye2-X0-n6Y" secondAttribute="leading" id="ugN-5b-pzJ"/>
@@ -63,6 +86,10 @@
                         <viewLayoutGuide key="safeArea" id="Ye2-X0-n6Y"/>
                     </view>
                     <navigationItem key="navigationItem" id="QR4-py-wFa"/>
+                    <connections>
+                        <outlet property="planetPickerView" destination="VBu-Ul-Nfr" id="KXi-lA-hZX"/>
+                        <outlet property="vehiclePickerView" destination="P71-aK-Q79" id="4SR-I2-sUU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okt-YW-6bk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

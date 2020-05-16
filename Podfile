@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'FindFalcone' do
   pod 'RxSwift', '~> 5.0'
+  pod 'RxCocoa', '~> 5.0'
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'MBProgressHUD'
   
