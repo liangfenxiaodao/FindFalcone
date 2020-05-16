@@ -68,11 +68,17 @@ class DestinationViewModel {
 
     var timeTakenText: Observable<String?> {
         Observable.combineLatest(selectedPlanet, selectedVehicle)
-            .map { (planet, vehicle) in
+            .map { [unowned self] (planet, vehicle) in
                 guard let planet = planet, let vehicle = vehicle else { return nil }
-                let time = planet.distance / vehicle.speed
+                let time = planet.distance / vehicle.speed + self.totalTimeTaken()
                 return "Time taken: \(time)"
             }
+    }
+
+    private func totalTimeTaken() -> Int {
+        return usecase.getDestinations().reduce(0, { (accumulation, enumeration) -> Int in
+            return accumulation + enumeration.timeTaken
+        })
     }
 
     func goToNextStep() -> Route? {
