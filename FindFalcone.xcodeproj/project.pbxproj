@@ -19,6 +19,7 @@
 		91763499246F699E00308B7E /* InitialiseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91763498246F699E00308B7E /* InitialiseUseCase.swift */; };
 		9176349C246FA44900308B7E /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176349B246FA44900308B7E /* Destination.swift */; };
 		917634A0246FE17900308B7E /* Vehicle+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176349F246FE17900308B7E /* Vehicle+Presentation.swift */; };
+		917634A42470042800308B7E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917634A32470042800308B7E /* Router.swift */; };
 		91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888B9246E96A100D603D7 /* AppDelegate.swift */; };
 		91F888BE246E96A100D603D7 /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* DestinationViewController.swift */; };
 		91F888C1246E96A100D603D7 /* Destination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888BF246E96A100D603D7 /* Destination.storyboard */; };
@@ -51,6 +52,7 @@
 		91763498246F699E00308B7E /* InitialiseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialiseUseCase.swift; sourceTree = "<group>"; };
 		9176349B246FA44900308B7E /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		9176349F246FE17900308B7E /* Vehicle+Presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle+Presentation.swift"; sourceTree = "<group>"; };
+		917634A32470042800308B7E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		91F888B6246E96A100D603D7 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888B9246E96A100D603D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91F888BD246E96A100D603D7 /* DestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewController.swift; sourceTree = "<group>"; };
@@ -128,19 +130,10 @@
 		91760501246E9B4700C3ABFC /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				917634A1246FE38600308B7E /* Presentation Extension */,
-				91760510246EB82C00C3ABFC /* Destination */,
 				91F888B9246E96A100D603D7 /* AppDelegate.swift */,
 				91F888C4246E96A200D603D7 /* LaunchScreen.storyboard */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		91760502246E9B5400C3ABFC /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		91760503246E9B5D00C3ABFC /* Utilities */ = {
@@ -203,12 +196,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		917634A1246FE38600308B7E /* Presentation Extension */ = {
+		917634A1246FE38600308B7E /* View Extension */ = {
 			isa = PBXGroup;
 			children = (
 				9176349F246FE17900308B7E /* Vehicle+Presentation.swift */,
 			);
-			path = "Presentation Extension";
+			path = "View Extension";
+			sourceTree = "<group>";
+		};
+		917634A2247003F700308B7E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				91760510246EB82C00C3ABFC /* Destination */,
+				917634A1246FE38600308B7E /* View Extension */,
+				917634A32470042800308B7E /* Router.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		91F888AD246E96A100D603D7 = {
@@ -237,7 +240,7 @@
 				91F888C7246E96A200D603D7 /* Info.plist */,
 				91F888C2246E96A200D603D7 /* Assets.xcassets */,
 				91760501246E9B4700C3ABFC /* Application */,
-				91760502246E9B5400C3ABFC /* Presentation */,
+				917634A2247003F700308B7E /* Presentation */,
 				91760500246E9B1E00C3ABFC /* Domain */,
 				917604FF246E9B1800C3ABFC /* Data */,
 				91760503246E9B5D00C3ABFC /* Utilities */,
@@ -452,6 +455,7 @@
 				917634A0246FE17900308B7E /* Vehicle+Presentation.swift in Sources */,
 				91760508246E9EB700C3ABFC /* Planet.swift in Sources */,
 				9176349C246FA44900308B7E /* Destination.swift in Sources */,
+				917634A42470042800308B7E /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

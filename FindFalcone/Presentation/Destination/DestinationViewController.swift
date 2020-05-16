@@ -23,6 +23,7 @@ class DestinationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Find Falcone!"
+        navigationItem.hidesBackButton = true
 
         setupDataBinding()
 
@@ -32,6 +33,7 @@ class DestinationViewController: UIViewController {
         vehiclePickerView.delegate = self
         vehiclePickerView.dataSource = self
 
+        button.isEnabled = false
         button.addTarget(self, action: #selector(goToNextStep), for: .touchUpInside)
     }
 
@@ -40,6 +42,7 @@ class DestinationViewController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.reloadPlanetPickerView()
                 self?.reloadVehiclePickerView()
+                self?.button.isEnabled = true
             })
             .disposed(by: disposeBag)
 
@@ -79,6 +82,7 @@ class DestinationViewController: UIViewController {
 
     @objc private func goToNextStep() {
         viewModel.goToNextStep()
+        route(to: Route.destination)
     }
 }
 
