@@ -36,22 +36,14 @@ class DestinationViewController: UIViewController {
     private func setupDataBinding() {
         viewModel.loadAvailablePlanets()
             .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.planetPickerView.reloadAllComponents()
-                self.planetPickerView.selectRow(0, inComponent: 0, animated: true)
-                self.pickerView(self.planetPickerView, didSelectRow: 0, inComponent: 0)
-                self.vehiclePickerView.reloadAllComponents()
-                self.vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
-                self.pickerView(self.vehiclePickerView, didSelectRow: 0, inComponent: 0)
+                self?.reloadPlanetPickerView()
+                self?.reloadVehiclePickerView()
             })
             .disposed(by: disposeBag)
 
         viewModel.loadAvailableVehicles()
             .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.vehiclePickerView.reloadAllComponents()
-                self.vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
-                self.pickerView(self.vehiclePickerView, didSelectRow: 0, inComponent: 0)
+                self?.reloadVehiclePickerView()
             })
             .disposed(by: disposeBag)
 
@@ -69,6 +61,18 @@ class DestinationViewController: UIViewController {
                 self?.timeTakenLabel.text = timeTaken
             })
             .disposed(by: disposeBag)
+    }
+
+    private func reloadPlanetPickerView() {
+        planetPickerView.reloadAllComponents()
+        planetPickerView.selectRow(0, inComponent: 0, animated: true)
+        pickerView(planetPickerView, didSelectRow: 0, inComponent: 0)
+    }
+
+    private func reloadVehiclePickerView() {
+        vehiclePickerView.reloadAllComponents()
+        vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
+        pickerView(vehiclePickerView, didSelectRow: 0, inComponent: 0)
     }
 }
 
