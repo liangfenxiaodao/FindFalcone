@@ -26,5 +26,23 @@ class DestinationViewController: UIViewController {
                 return planet.name
             }
             .disposed(by: disposeBag)
+
+        planetPickerView.rx.itemSelected
+            .subscribe(onNext: { [weak self] row, component in
+                self?.viewModel.selectPlanet(index: row)
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.getAvailableVehicles()
+            .subscribe(onNext: { [weak self] vehicles in
+                self?.vehiclePickerView.isHidden = vehicles.isEmpty
+            })
+        .disposed(by: disposeBag)
+
+        viewModel.getAvailableVehicles()
+            .bind(to: vehiclePickerView.rx.itemTitles) { _, vehicle in
+                return vehicle.name
+            }
+            .disposed(by: disposeBag)
     }
 }

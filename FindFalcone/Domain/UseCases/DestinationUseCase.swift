@@ -16,7 +16,7 @@ class DestinationUseCase {
         return DataStore.observable(path: \.availablePlanets)
     }
 
-    func getVehicles() -> Observable<[Vehicle]> {
+    func getAvailbleVehicles() -> Observable<[Vehicle]> {
         return DataStore.observable(path: \.availableVehicles)
     }
 }
