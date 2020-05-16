@@ -31,6 +31,8 @@ class DestinationViewController: UIViewController {
 
         vehiclePickerView.delegate = self
         vehiclePickerView.dataSource = self
+
+        button.addTarget(self, action: #selector(goToNextStep), for: .touchUpInside)
     }
 
     private func setupDataBinding() {
@@ -73,6 +75,10 @@ class DestinationViewController: UIViewController {
         vehiclePickerView.reloadAllComponents()
         vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
         pickerView(vehiclePickerView, didSelectRow: 0, inComponent: 0)
+    }
+
+    @objc private func goToNextStep() {
+        viewModel.goToNextStep()
     }
 }
 

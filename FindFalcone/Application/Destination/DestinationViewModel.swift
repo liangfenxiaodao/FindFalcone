@@ -74,4 +74,13 @@ class DestinationViewModel {
                 return "Time taken: \(time)"
             }
     }
+
+    func goToNextStep() {
+        guard let planet = selectedPlanet.value, let vehicle = selectedVehicle.value else {
+            return
+        }
+
+        let destination = Destination(planet: planet, vehicle: vehicle)
+        usecase.saveDestination(destination)
+    }
 }

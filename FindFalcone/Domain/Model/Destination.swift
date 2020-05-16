@@ -11,4 +11,7 @@ import Foundation
 struct Destination: Equatable {
     let planet: Planet
     let vehicle: Vehicle
+    var timeTaken: Int {
+        planet.distance / vehicle.speed
+    }
 }
