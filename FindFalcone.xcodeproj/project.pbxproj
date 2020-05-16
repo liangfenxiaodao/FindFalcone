@@ -17,6 +17,7 @@
 		91763492246F621300308B7E /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91763491246F621300308B7E /* DestinationViewModel.swift */; };
 		91763496246F630F00308B7E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91763495246F630F00308B7E /* DataStore.swift */; };
 		91763499246F699E00308B7E /* InitialiseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91763498246F699E00308B7E /* InitialiseUseCase.swift */; };
+		9176349C246FA44900308B7E /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176349B246FA44900308B7E /* Destination.swift */; };
 		91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888B9246E96A100D603D7 /* AppDelegate.swift */; };
 		91F888BE246E96A100D603D7 /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* DestinationViewController.swift */; };
 		91F888C1246E96A100D603D7 /* Destination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888BF246E96A100D603D7 /* Destination.storyboard */; };
@@ -47,6 +48,7 @@
 		91763491246F621300308B7E /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
 		91763495246F630F00308B7E /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		91763498246F699E00308B7E /* InitialiseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialiseUseCase.swift; sourceTree = "<group>"; };
+		9176349B246FA44900308B7E /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		91F888B6246E96A100D603D7 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888B9246E96A100D603D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91F888BD246E96A100D603D7 /* DestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		91760500246E9B1E00C3ABFC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9176349A246FA44000308B7E /* Model */,
 				91763493246F62ED00308B7E /* UseCases */,
 			);
 			path = Domain;
@@ -187,6 +190,14 @@
 				9176050B246E9F7800C3ABFC /* FalconeProvider.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		9176349A246FA44000308B7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9176349B246FA44900308B7E /* Destination.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		91F888AD246E96A100D603D7 = {
@@ -428,6 +439,7 @@
 				9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */,
 				91763496246F630F00308B7E /* DataStore.swift in Sources */,
 				91760508246E9EB700C3ABFC /* Planet.swift in Sources */,
+				9176349C246FA44900308B7E /* Destination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

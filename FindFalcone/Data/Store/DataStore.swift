@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 struct DataStore {
+    static let maxNumberOfDestinations = 4
     static var observable = BehaviorRelay<DataStore>(value: .shared)
     static var shared: DataStore = DataStore() {
         didSet {
@@ -22,6 +23,7 @@ struct DataStore {
     var planets: [Planet] = []
     var availableVehicles: [Vehicle] = []
     var availablePlanets: [Planet] = []
+    var destinations: [Destination] = []
 }
 
 extension DataStore {

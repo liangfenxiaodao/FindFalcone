@@ -19,4 +19,8 @@ class DestinationUseCase {
     func getAvailbleVehicles() -> Observable<[Vehicle]> {
         return DataStore.observable(path: \.availableVehicles)
     }
+
+    func getDestinations() -> Observable<[Destination]> {
+        return DataStore.observable(path: \.destinations)
+    }
 }

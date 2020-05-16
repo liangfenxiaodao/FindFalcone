@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Planet: Codable, Equatable {
+struct Planet: Codable, Equatable, Hashable {
     let name: String
     let distance: Int
 }

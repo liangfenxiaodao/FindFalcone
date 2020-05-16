@@ -27,7 +27,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE0-1b-4BI" userLabel="subtitleLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FE0-1b-4BI" userLabel="destinationLabel">
                                         <rect key="frame" x="163.5" y="100" width="87" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Kmh-Jv-HvI"/>
@@ -55,6 +55,12 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k40-XD-5U4" userLabel="timeTakenLabel">
+                                        <rect key="frame" x="207" y="560" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VBu-Ul-Nfr" firstAttribute="width" secondItem="SHK-Q9-fIR" secondAttribute="width" multiplier="0.772947" id="2Ly-5M-CCM"/>
@@ -65,6 +71,8 @@
                                     <constraint firstItem="FE0-1b-4BI" firstAttribute="top" secondItem="wbL-JO-6lE" secondAttribute="bottom" constant="40" id="NL1-Fd-bu2"/>
                                     <constraint firstItem="wbL-JO-6lE" firstAttribute="top" secondItem="SHK-Q9-fIR" secondAttribute="top" constant="40" id="R6M-hY-lVx"/>
                                     <constraint firstItem="wbL-JO-6lE" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="Yia-hj-wvj"/>
+                                    <constraint firstItem="k40-XD-5U4" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="a3w-4k-mzs"/>
+                                    <constraint firstItem="k40-XD-5U4" firstAttribute="top" secondItem="P71-aK-Q79" secondAttribute="bottom" constant="60" id="bKz-OC-IOx"/>
                                     <constraint firstItem="P71-aK-Q79" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="bur-Z5-vFu"/>
                                     <constraint firstAttribute="trailing" secondItem="VBu-Ul-Nfr" secondAttribute="trailing" constant="47" id="n5J-cV-PKl"/>
                                     <constraint firstItem="P71-aK-Q79" firstAttribute="width" secondItem="SHK-Q9-fIR" secondAttribute="width" multiplier="0.772947" id="oMM-9V-b7p"/>
@@ -87,7 +95,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="QR4-py-wFa"/>
                     <connections>
+                        <outlet property="button" destination="Nl8-Wb-qfx" id="Ztz-MP-IS2"/>
+                        <outlet property="destinationLabel" destination="FE0-1b-4BI" id="LYz-OH-euL"/>
                         <outlet property="planetPickerView" destination="VBu-Ul-Nfr" id="KXi-lA-hZX"/>
+                        <outlet property="timeTakenLabel" destination="k40-XD-5U4" id="Sy7-5Q-hii"/>
                         <outlet property="vehiclePickerView" destination="P71-aK-Q79" id="4SR-I2-sUU"/>
                     </connections>
                 </viewController>
