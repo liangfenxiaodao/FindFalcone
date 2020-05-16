@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHK-Q9-fIR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="450"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select planets you want to search in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbL-JO-6lE" userLabel="titleLabel">
                                         <rect key="frame" x="69.5" y="40" width="275" height="20"/>
@@ -43,13 +43,13 @@
                                         </constraints>
                                     </pickerView>
                                     <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P71-aK-Q79" userLabel="vehiclePickerView">
-                                        <rect key="frame" x="47" y="350" width="320" height="100"/>
+                                        <rect key="frame" x="47" y="350" width="320" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="lMQ-hp-o6H"/>
+                                            <constraint firstAttribute="height" constant="150" id="lMQ-hp-o6H"/>
                                         </constraints>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nl8-Wb-qfx">
-                                        <rect key="frame" x="184" y="490" width="46" height="30"/>
+                                        <rect key="frame" x="184" y="748" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="sFU-CT-W67"/>
                                         </constraints>
@@ -58,11 +58,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VBu-Ul-Nfr" firstAttribute="width" secondItem="SHK-Q9-fIR" secondAttribute="width" multiplier="0.772947" id="2Ly-5M-CCM"/>
-                                    <constraint firstItem="VBu-Ul-Nfr" firstAttribute="centerY" secondItem="SHK-Q9-fIR" secondAttribute="centerY" id="6AG-r7-OGH"/>
                                     <constraint firstItem="VBu-Ul-Nfr" firstAttribute="leading" secondItem="P71-aK-Q79" secondAttribute="leading" id="6dI-vP-imy"/>
                                     <constraint firstItem="VBu-Ul-Nfr" firstAttribute="top" secondItem="FE0-1b-4BI" secondAttribute="bottom" constant="30" id="A6r-U2-09X"/>
                                     <constraint firstAttribute="bottom" secondItem="Nl8-Wb-qfx" secondAttribute="bottom" constant="40" id="DdP-g4-SIF"/>
-                                    <constraint firstItem="Nl8-Wb-qfx" firstAttribute="top" secondItem="P71-aK-Q79" secondAttribute="bottom" constant="40" id="HWt-AO-Upm"/>
                                     <constraint firstItem="FE0-1b-4BI" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="LZm-go-zmo"/>
                                     <constraint firstItem="FE0-1b-4BI" firstAttribute="top" secondItem="wbL-JO-6lE" secondAttribute="bottom" constant="40" id="NL1-Fd-bu2"/>
                                     <constraint firstItem="wbL-JO-6lE" firstAttribute="top" secondItem="SHK-Q9-fIR" secondAttribute="top" constant="40" id="R6M-hY-lVx"/>
@@ -80,7 +78,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ye2-X0-n6Y" firstAttribute="trailing" secondItem="SHK-Q9-fIR" secondAttribute="trailing" id="6KC-3L-TN3"/>
+                            <constraint firstItem="Ye2-X0-n6Y" firstAttribute="bottom" secondItem="SHK-Q9-fIR" secondAttribute="bottom" id="XoW-eT-Qxk"/>
                             <constraint firstItem="SHK-Q9-fIR" firstAttribute="top" secondItem="Ye2-X0-n6Y" secondAttribute="top" id="hTS-g1-CBh"/>
+                            <constraint firstItem="Ye2-X0-n6Y" firstAttribute="bottom" secondItem="Nl8-Wb-qfx" secondAttribute="bottom" constant="40" id="uBc-41-cru"/>
                             <constraint firstItem="SHK-Q9-fIR" firstAttribute="leading" secondItem="Ye2-X0-n6Y" secondAttribute="leading" id="ugN-5b-pzJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ye2-X0-n6Y"/>
