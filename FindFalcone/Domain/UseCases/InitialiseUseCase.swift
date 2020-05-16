@@ -17,7 +17,6 @@ class InitialiseUseCase {
         falconeProvider.getPlanets()
             .subscribe(onNext: { planets in
                 DataStore.shared.planets = planets
-                DataStore.shared.availablePlanets = planets
             })
             .disposed(by: disposeBag)
     }
@@ -26,7 +25,6 @@ class InitialiseUseCase {
         falconeProvider.getVehicles()
             .subscribe(onNext: { vehicles in
                 DataStore.shared.vehicles = vehicles
-                DataStore.shared.availableVehicles = vehicles
             })
             .disposed(by: disposeBag)
     }

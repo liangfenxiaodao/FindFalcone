@@ -26,5 +26,18 @@ class DestinationUseCase {
 
     func saveDestination(_ destination: Destination) {
         DataStore.shared.destinations.append(destination)
+        DataStore.shared.availablePlanets.removeAll(where: { $0.name == destination.planet.name })
+
+        if destination.vehicle.total == 1 {
+            DataStore.shared.availableVehicles.removeAll(where: { $0.name == destination.vehicle.name })
+        } else {
+            updateAvailableVehicles(with: destination.vehicle)
+        }
+    }
+
+    private func updateAvailableVehicles(with vehicle: Vehicle) {
+        let updatedVehicle = Vehicle(name: vehicle.name, total: vehicle.total - 1, distance: vehicle.distance, speed: vehicle.speed)
+        guard let index = DataStore.shared.availableVehicles.firstIndex(of: vehicle) else { return }
+        DataStore.shared.availableVehicles[index] = updatedVehicle
     }
 }

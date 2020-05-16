@@ -19,10 +19,20 @@ struct DataStore {
         }
     }
 
-    var vehicles: [Vehicle] = []
-    var planets: [Planet] = []
-    var availableVehicles: [Vehicle] = []
+    var planets: [Planet] = [] {
+        didSet {
+            availablePlanets = planets
+        }
+    }
     var availablePlanets: [Planet] = []
+
+    var vehicles: [Vehicle] = [] {
+        didSet {
+            availableVehicles = vehicles
+        }
+    }
+    var availableVehicles: [Vehicle] = []
+
     var destinations: [Destination] = []
 }
 

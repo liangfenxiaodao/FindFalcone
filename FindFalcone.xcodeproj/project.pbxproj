@@ -24,7 +24,7 @@
 		91F888C1246E96A100D603D7 /* Destination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888BF246E96A100D603D7 /* Destination.storyboard */; };
 		91F888C3246E96A200D603D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F888C2246E96A200D603D7 /* Assets.xcassets */; };
 		91F888C6246E96A200D603D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888C4246E96A200D603D7 /* LaunchScreen.storyboard */; };
-		91F888D1246E96A200D603D7 /* FindFalconeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888D0246E96A200D603D7 /* FindFalconeTests.swift */; };
+		91F888D1246E96A200D603D7 /* DestinationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888D0246E96A200D603D7 /* DestinationUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		91F888C5246E96A200D603D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91F888C7246E96A200D603D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91F888CC246E96A200D603D7 /* FindFalconeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindFalconeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91F888D0246E96A200D603D7 /* FindFalconeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconeTests.swift; sourceTree = "<group>"; };
+		91F888D0246E96A200D603D7 /* DestinationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationUseCaseTests.swift; sourceTree = "<group>"; };
 		91F888D2246E96A200D603D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D596EE912791218E54DF0A31 /* Pods-FindFalcone-FindFalconeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindFalcone-FindFalconeTests.debug.xcconfig"; path = "Target Support Files/Pods-FindFalcone-FindFalconeTests/Pods-FindFalcone-FindFalconeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9901F6DEABF02ECCA4EDA15 /* Pods_FindFalcone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindFalcone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,7 +248,7 @@
 		91F888CF246E96A200D603D7 /* FindFalconeTests */ = {
 			isa = PBXGroup;
 			children = (
-				91F888D0246E96A200D603D7 /* FindFalconeTests.swift */,
+				91F888D0246E96A200D603D7 /* DestinationUseCaseTests.swift */,
 				91F888D2246E96A200D603D7 /* Info.plist */,
 			);
 			path = FindFalconeTests;
@@ -459,7 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91F888D1246E96A200D603D7 /* FindFalconeTests.swift in Sources */,
+				91F888D1246E96A200D603D7 /* DestinationUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
