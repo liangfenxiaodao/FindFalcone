@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 class DestinationViewController: UIViewController {
     private var viewModel: DestinationViewModel = DestinationViewModel()
@@ -25,8 +24,6 @@ class DestinationViewController: UIViewController {
         navigationItem.title = "Find Falcone!"
         navigationItem.hidesBackButton = true
 
-        setupDataBinding()
-
         planetPickerView.delegate = self
         planetPickerView.dataSource = self
 
@@ -35,14 +32,20 @@ class DestinationViewController: UIViewController {
 
         button.isEnabled = false
         button.addTarget(self, action: #selector(goToNextStep), for: .touchUpInside)
+
+        destinationLabel.text = viewModel.destinationLabelText
+        button.setTitle(viewModel.buttonText, for: .normal)
+
+        setupDataBinding()
     }
 
     private func setupDataBinding() {
         viewModel.loadAvailablePlanets()
             .subscribe(onNext: { [weak self] _ in
-                self?.reloadPlanetPickerView()
-                self?.reloadVehiclePickerView()
-                self?.button.isEnabled = true
+                guard let self = self else { return }
+                self.reloadPlanetPickerView()
+                self.reloadVehiclePickerView()
+                self.button.isEnabled = true
             })
             .disposed(by: disposeBag)
 
@@ -50,14 +53,6 @@ class DestinationViewController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.reloadVehiclePickerView()
             })
-            .disposed(by: disposeBag)
-
-        viewModel.destinationLabelText
-            .bind(to: destinationLabel.rx.text)
-            .disposed(by: disposeBag)
-
-        viewModel.buttonText
-            .bind(to: button.rx.title())
             .disposed(by: disposeBag)
 
         viewModel.timeTakenText
@@ -78,11 +73,12 @@ class DestinationViewController: UIViewController {
         vehiclePickerView.reloadAllComponents()
         vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
         pickerView(vehiclePickerView, didSelectRow: 0, inComponent: 0)
+        button.isEnabled = true
     }
 
     @objc private func goToNextStep() {
-        viewModel.goToNextStep()
-        route(to: Route.destination)
+        guard let next = viewModel.goToNextStep() else { return }
+        route(to: next)
     }
 }
 

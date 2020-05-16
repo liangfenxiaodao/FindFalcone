@@ -22,6 +22,7 @@ class DestinationViewModel {
 
     func loadAvailablePlanets() -> Observable<[Planet]> {
         return usecase.getAvailablePlanets()
+            .filter { !$0.isEmpty }
             .map { [weak self] planets in
                 self?.avaiablePlanets = planets
                 return planets
@@ -40,6 +41,7 @@ class DestinationViewModel {
                 self?.avaiableVehicles = filterVehicles
                 return filterVehicles
             }
+            .filter { !$0.isEmpty }
     }
 
     func selectPlanet(index: Int) {
@@ -52,18 +54,16 @@ class DestinationViewModel {
         selectedVehicle.accept(avaiableVehicles[index])
     }
 
-    var buttonText: Observable<String> {
-        usecase.getDestinations().map { destinations in
-            if destinations.count == DataStore.maxNumberOfDestinations - 1 {
-                return "Find Falcone!"
-            } else {
-                return "Next"
-            }
+    var buttonText: String {
+        if usecase.getDestinations().count == DataStore.maxNumberOfDestinations - 1 {
+            return "Find Falcone!"
+        } else {
+            return "Next"
         }
     }
 
-    var destinationLabelText: Observable<String> {
-        usecase.getDestinations().map { "Destination: \($0.count + 1)" }
+    var destinationLabelText: String {
+        return "Destination: \(usecase.getDestinations().count + 1)"
     }
 
     var timeTakenText: Observable<String?> {
@@ -75,12 +75,17 @@ class DestinationViewModel {
             }
     }
 
-    func goToNextStep() {
+    func goToNextStep() -> Route? {
         guard let planet = selectedPlanet.value, let vehicle = selectedVehicle.value else {
-            return
+            return nil
         }
 
         let destination = Destination(planet: planet, vehicle: vehicle)
         usecase.saveDestination(destination)
+
+        if usecase.getDestinations().count == DataStore.maxNumberOfDestinations {
+            return Route.result
+        }
+        return Route.destination
     }
 }

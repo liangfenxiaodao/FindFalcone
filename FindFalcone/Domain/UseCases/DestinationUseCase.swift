@@ -20,8 +20,8 @@ class DestinationUseCase {
         return DataStore.observable(path: \.availableVehicles)
     }
 
-    func getDestinations() -> Observable<[Destination]> {
-        return DataStore.observable(path: \.destinations)
+    func getDestinations() -> [Destination] {
+        return DataStore.shared.destinations
     }
 
     func saveDestination(_ destination: Destination) {
