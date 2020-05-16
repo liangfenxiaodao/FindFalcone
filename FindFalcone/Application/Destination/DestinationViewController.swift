@@ -23,29 +23,36 @@ class DestinationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Find Falcone!"
-        button.isEnabled = false
 
         setupDataBinding()
-        setupActionBinding()
+
+        planetPickerView.delegate = self
+        planetPickerView.dataSource = self
+
+        vehiclePickerView.delegate = self
+        vehiclePickerView.dataSource = self
     }
 
     private func setupDataBinding() {
-        viewModel.getAvailablePlanets()
-            .bind(to: planetPickerView.rx.itemTitles) { _, planet in
-                return planet.name
-            }
-            .disposed(by: disposeBag)
-
-        viewModel.getAvailableVehicles()
-            .subscribe(onNext: { [weak self] vehicles in
-                self?.vehiclePickerView.isHidden = vehicles.isEmpty
+        viewModel.loadAvailablePlanets()
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.planetPickerView.reloadAllComponents()
+                self.planetPickerView.selectRow(0, inComponent: 0, animated: true)
+                self.pickerView(self.planetPickerView, didSelectRow: 0, inComponent: 0)
+                self.vehiclePickerView.reloadAllComponents()
+                self.vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
+                self.pickerView(self.vehiclePickerView, didSelectRow: 0, inComponent: 0)
             })
             .disposed(by: disposeBag)
 
-        viewModel.getAvailableVehicles()
-            .bind(to: vehiclePickerView.rx.itemTitles) { _, vehicle in
-                return vehicle.name
-            }
+        viewModel.loadAvailableVehicles()
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.vehiclePickerView.reloadAllComponents()
+                self.vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
+                self.pickerView(self.vehiclePickerView, didSelectRow: 0, inComponent: 0)
+            })
             .disposed(by: disposeBag)
 
         viewModel.destinationLabelText
@@ -63,19 +70,34 @@ class DestinationViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
+}
 
-    private func setupActionBinding() {
-        planetPickerView.rx.itemSelected
-            .subscribe(onNext: { [weak self] row, component in
-                self?.viewModel.selectPlanet(index: row)
-            })
-            .disposed(by: disposeBag)
+extension DestinationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
 
-        vehiclePickerView.rx.itemSelected
-            .subscribe(onNext: { [weak self] row, component in
-                self?.viewModel.selectVehicle(index: row)
-                self?.button.isEnabled = true
-            })
-            .disposed(by: disposeBag)
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == planetPickerView {
+            return viewModel.avaiablePlanets.count
+        } else {
+            return viewModel.avaiableVehicles.count
+        }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == planetPickerView {
+            return viewModel.avaiablePlanets[row].name
+        } else {
+            return viewModel.avaiableVehicles[row].displayName
+        }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == planetPickerView {
+            viewModel.selectPlanet(index: row)
+        } else {
+            viewModel.selectVehicle(index: row)
+        }
     }
 }

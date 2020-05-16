@@ -42,7 +42,7 @@
                                             <constraint firstAttribute="height" constant="150" id="KaU-1z-x5b"/>
                                         </constraints>
                                     </pickerView>
-                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P71-aK-Q79" userLabel="vehiclePickerView">
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P71-aK-Q79" userLabel="vehiclePickerView">
                                         <rect key="frame" x="47" y="350" width="320" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="lMQ-hp-o6H"/>

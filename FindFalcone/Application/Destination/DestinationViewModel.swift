@@ -14,37 +14,41 @@ class DestinationViewModel {
     private var disposeBag = DisposeBag()
     private let usecase = DestinationUseCase()
 
-    private var avaiablePlanets: [Planet] = []
-    private var avaiableVehicles: [Vehicle] = []
+    var avaiablePlanets: [Planet] = []
+    var avaiableVehicles: [Vehicle] = []
 
     private var selectedPlanet = BehaviorRelay<Planet?>(value: nil)
     private var selectedVehicle = BehaviorRelay<Vehicle?>(value: nil)
 
-    func getAvailablePlanets() -> Observable<[Planet]> {
-        return usecase.getAvailablePlanets().do(onNext: { [weak self] planets in
-            self?.avaiablePlanets = planets
-        })
+    func loadAvailablePlanets() -> Observable<[Planet]> {
+        return usecase.getAvailablePlanets()
+            .map { [weak self] planets in
+                self?.avaiablePlanets = planets
+                return planets
+            }
     }
 
-    func getAvailableVehicles() -> Observable<[Vehicle]> {
+    func loadAvailableVehicles() -> Observable<[Vehicle]> {
         return Observable.combineLatest(selectedPlanet, usecase.getAvailbleVehicles())
-            .map { (selectedPlanet, vehicles) in
+            .map { [weak self] (selectedPlanet, vehicles) in
                 guard let selectedPlanet = selectedPlanet else {
                     return []
                 }
-                return vehicles.filter { vehicle in
+                let filterVehicles = vehicles.filter { vehicle in
                     vehicle.distance >= selectedPlanet.distance
                 }
-            }.do(onNext: { [weak self] vehicles in
-                self?.avaiableVehicles = vehicles
-            })
+                self?.avaiableVehicles = filterVehicles
+                return filterVehicles
+            }
     }
 
     func selectPlanet(index: Int) {
+        guard !avaiablePlanets.isEmpty else { return }
         selectedPlanet.accept(avaiablePlanets[index])
     }
 
     func selectVehicle(index: Int) {
+        guard !avaiableVehicles.isEmpty else { return }
         selectedVehicle.accept(avaiableVehicles[index])
     }
 
