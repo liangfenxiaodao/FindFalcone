@@ -39,7 +39,10 @@ class DestinationViewController: UIViewController {
 
         restartButton.isHidden = viewModel.shouldHideResetButton
         restartButton.addTarget(self, action: #selector(restart), for: .touchUpInside)
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupDataBinding()
     }
 

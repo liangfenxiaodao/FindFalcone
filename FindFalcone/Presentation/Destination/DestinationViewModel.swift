@@ -49,7 +49,7 @@ class DestinationViewModel {
     }
 
     func selectVehicle(index: Int) {
-        if index == avaiableVehicles.count {
+        if index >= avaiableVehicles.count {
             selectedVehicle.accept(nil)
         } else {
             selectedVehicle.accept(avaiableVehicles[index])
