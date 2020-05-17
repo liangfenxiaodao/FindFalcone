@@ -18,8 +18,9 @@ class ResultViewController: UIViewController {
 
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    let viewModel = ResultViewModel()
-    let disposeBag = DisposeBag()
+
+    private let viewModel = ResultViewModel()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class ResultViewController: UIViewController {
         viewModel.planetNameText
             .bind(to: planetLabel.rx.text)
             .disposed(by: disposeBag)
+
+
+        restartButton.addTarget(self, action: #selector(restart), for: .touchUpInside)
     }
 
     private func configure(with result: Result) {
@@ -51,5 +55,9 @@ class ResultViewController: UIViewController {
         } else {
             resultLabel.text = viewModel.failureResultText
         }
+    }
+
+    @objc private func restart() {
+        viewModel.restart()
     }
 }

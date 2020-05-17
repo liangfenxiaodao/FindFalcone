@@ -12,7 +12,8 @@ import RxCocoa
 
 class DestinationViewModel {
     private var disposeBag = DisposeBag()
-    private let usecase = DestinationUseCase()
+    private let destinationUsecase = DestinationUseCase()
+    private let restartUseCase = RestartUseCase()
 
     var avaiablePlanets: [Planet] = []
     var avaiableVehicles: [Vehicle] = []
@@ -21,7 +22,7 @@ class DestinationViewModel {
     private var selectedVehicle = BehaviorRelay<Vehicle?>(value: nil)
 
     func loadAvailablePlanets() -> Observable<[Planet]> {
-        return usecase.getAvailablePlanets()
+        return destinationUsecase.getAvailablePlanets()
             .map { [weak self] planets in
                 self?.avaiablePlanets = planets
                 return planets
@@ -29,7 +30,7 @@ class DestinationViewModel {
     }
 
     func loadAvailableVehicles() -> Observable<[Vehicle]> {
-        return Observable.combineLatest(selectedPlanet, usecase.getAvailbleVehicles())
+        return Observable.combineLatest(selectedPlanet, destinationUsecase.getAvailbleVehicles())
             .map { [weak self] (selectedPlanet, vehicles) in
                 guard let selectedPlanet = selectedPlanet else {
                     return []
@@ -56,7 +57,7 @@ class DestinationViewModel {
     }
 
     var buttonText: String {
-        if usecase.getDestinations().count == DataStore.maxNumberOfDestinations - 1 {
+        if destinationUsecase.getDestinations().count == DataStore.maxNumberOfDestinations - 1 {
             return "Find Falcone!"
         } else {
             return "Next"
@@ -64,18 +65,18 @@ class DestinationViewModel {
     }
 
     var destinationLabelText: String {
-        return "Destination: \(usecase.getDestinations().count + 1)"
+        return "Destination: \(destinationUsecase.getDestinations().count + 1)"
     }
 
     var shouldHideResetButton: Bool {
-        return usecase.getDestinations().count == 0
+        return destinationUsecase.getDestinations().count == 0
     }
 
     var timeTakenText: Observable<String?> {
         Observable.combineLatest(selectedPlanet, selectedVehicle)
             .map { [weak self] (planet, vehicle) in
                 guard let self = self, let planet = planet, let vehicle = vehicle else { return nil }
-                let time = planet.distance / vehicle.speed + self.usecase.getTotalTimeTaken()
+                let time = planet.distance / vehicle.speed + self.destinationUsecase.getTotalTimeTaken()
                 return "Time taken: \(time)"
             }
     }
@@ -86,11 +87,15 @@ class DestinationViewModel {
         }
 
         let destination = Destination(planet: planet, vehicle: vehicle)
-        usecase.saveDestination(destination)
+        destinationUsecase.saveDestination(destination)
 
-        if usecase.getDestinations().count == DataStore.maxNumberOfDestinations {
+        if destinationUsecase.getDestinations().count == DataStore.maxNumberOfDestinations {
             return Route.result
         }
         return Route.destination
+    }
+
+    func restart() {
+        restartUseCase.restart()
     }
 }

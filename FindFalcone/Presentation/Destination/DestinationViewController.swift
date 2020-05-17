@@ -38,6 +38,7 @@ class DestinationViewController: UIViewController {
         nextButton.setTitle(viewModel.buttonText, for: .normal)
 
         restartButton.isHidden = viewModel.shouldHideResetButton
+        restartButton.addTarget(self, action: #selector(restart), for: .touchUpInside)
 
         setupDataBinding()
     }
@@ -80,6 +81,11 @@ class DestinationViewController: UIViewController {
         disposeBag = DisposeBag()
         guard let next = viewModel.goToNextStep() else { return }
         route(to: next)
+    }
+
+    @objc private func restart() {
+        disposeBag = DisposeBag()
+        viewModel.restart()
     }
 }
 

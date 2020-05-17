@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initialiseDestinations()
-        // Override point for customization after application launch.
+        NotificationCenter.default.addObserver(self, selector: #selector(restart), name: Constants.NotificationRestart, object: nil)
+
         let destinationVC = UIStoryboard(name: "Destination", bundle: nil).instantiateInitialViewController()
         let navigationVC = UINavigationController(rootViewController: destinationVC!)
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -30,5 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func initialiseDestinations() {
         usecase.initialisePlanets()
         usecase.initialiseVehicles()
+    }
+
+    @objc private func restart() {
+        guard let root = window?.rootViewController as? UINavigationController else { return }
+        root.popToRootViewController(animated: true)
     }
 }

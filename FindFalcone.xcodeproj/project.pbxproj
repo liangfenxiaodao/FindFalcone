@@ -27,6 +27,8 @@
 		917634AF2471092200308B7E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917634AE2471092200308B7E /* Token.swift */; };
 		917634B124710BF300308B7E /* FindFalconeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917634B024710BF300308B7E /* FindFalconeRequest.swift */; };
 		917634B324710CE200308B7E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917634B224710CE200308B7E /* Result.swift */; };
+		917634B52471243C00308B7E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917634B42471243C00308B7E /* Constants.swift */; };
+		917634B72471254300308B7E /* RestartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917634B62471254300308B7E /* RestartUseCase.swift */; };
 		91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888B9246E96A100D603D7 /* AppDelegate.swift */; };
 		91F888BE246E96A100D603D7 /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F888BD246E96A100D603D7 /* DestinationViewController.swift */; };
 		91F888C1246E96A100D603D7 /* Destination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F888BF246E96A100D603D7 /* Destination.storyboard */; };
@@ -67,6 +69,8 @@
 		917634AE2471092200308B7E /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		917634B024710BF300308B7E /* FindFalconeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFalconeRequest.swift; sourceTree = "<group>"; };
 		917634B224710CE200308B7E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		917634B42471243C00308B7E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		917634B62471254300308B7E /* RestartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartUseCase.swift; sourceTree = "<group>"; };
 		91F888B6246E96A100D603D7 /* FindFalcone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindFalcone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F888B9246E96A100D603D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91F888BD246E96A100D603D7 /* DestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				9176050D246EA96700C3ABFC /* DestinationUseCase.swift */,
 				917634AC2471088600308B7E /* FindFalconeUseCase.swift */,
 				91763498246F699E00308B7E /* InitialiseUseCase.swift */,
+				917634B62471254300308B7E /* RestartUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				91760510246EB82C00C3ABFC /* Destination */,
 				917634A1246FE38600308B7E /* View Extension */,
 				917634A32470042800308B7E /* Router.swift */,
+				917634B42471243C00308B7E /* Constants.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -483,11 +489,13 @@
 				91763492246F621300308B7E /* DestinationViewModel.swift in Sources */,
 				91F888BA246E96A100D603D7 /* AppDelegate.swift in Sources */,
 				9176050E246EA96700C3ABFC /* DestinationUseCase.swift in Sources */,
+				917634B72471254300308B7E /* RestartUseCase.swift in Sources */,
 				9176050C246E9F7800C3ABFC /* FalconeProvider.swift in Sources */,
 				91763496246F630F00308B7E /* DataStore.swift in Sources */,
 				917634B124710BF300308B7E /* FindFalconeRequest.swift in Sources */,
 				917634A92471059E00308B7E /* ResultViewController.swift in Sources */,
 				917634A0246FE17900308B7E /* Vehicle+Presentation.swift in Sources */,
+				917634B52471243C00308B7E /* Constants.swift in Sources */,
 				91760508246E9EB700C3ABFC /* Planet.swift in Sources */,
 				9176349C246FA44900308B7E /* Destination.swift in Sources */,
 				917634AF2471092200308B7E /* Token.swift in Sources */,
@@ -583,7 +591,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -637,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
