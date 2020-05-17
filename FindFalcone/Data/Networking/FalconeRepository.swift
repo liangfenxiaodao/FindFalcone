@@ -10,7 +10,7 @@ import Foundation
 import Moya
 import RxSwift
 
-class FalconeProvider {
+class FalconeRepository {
     let provider = MoyaProvider<FalconeAPI>()
 
     func getPlanets() -> Observable<[Planet]> {

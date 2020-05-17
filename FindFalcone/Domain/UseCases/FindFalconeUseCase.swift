@@ -11,12 +11,12 @@ import RxSwift
 
 class FalconeUseCase {
     let disposeBag = DisposeBag()
-    let falconeProvider = FalconeProvider()
+    let falconeRepository = FalconeRepository()
 
     func findFalcone() -> Observable<Result> {
-        falconeProvider.getToken()
+        falconeRepository.getToken()
             .flatMap { [unowned self] token in
-                self.falconeProvider.findFalcone(token: token, destinations: DataStore.shared.destinations)
+                self.falconeRepository.findFalcone(token: token, destinations: DataStore.shared.destinations)
             }
     }
 }

@@ -10,11 +10,11 @@ import Foundation
 import RxSwift
 
 class InitialiseUseCase {
-    let falconeProvider = FalconeProvider()
+    let falconeRepository = FalconeRepository()
     let disposeBag = DisposeBag()
 
     func initialisePlanets() {
-        falconeProvider.getPlanets()
+        falconeRepository.getPlanets()
             .subscribe(onNext: { planets in
                 DataStore.shared.planets = planets
             })
@@ -22,7 +22,7 @@ class InitialiseUseCase {
     }
 
     func initialiseVehicles() {
-        falconeProvider.getVehicles()
+        falconeRepository.getVehicles()
             .subscribe(onNext: { vehicles in
                 DataStore.shared.vehicles = vehicles
             })
