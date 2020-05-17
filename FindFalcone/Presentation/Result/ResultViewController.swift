@@ -30,8 +30,24 @@ class ResultViewController: UIViewController {
         viewModel.findFalcone()
             .subscribe(onNext: { [weak self] result in
                 self?.indicator.stopAnimating()
-                print(result)
+                self?.configure(with: result)
             })
             .disposed(by: disposeBag)
+
+        viewModel.planetNameText
+            .bind(to: planetLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+
+    private func configure(with result: Result) {
+        resultLabel.isHidden = false
+        if result.isSuccess {
+            resultLabel.text = viewModel.successResultText
+            timeTakenLabel.isHidden = false
+            timeTakenLabel.text = viewModel.totalTimeTakenText
+            planetLabel.isHidden = false
+        } else {
+            resultLabel.text = viewModel.failureResultText
+        }
     }
 }

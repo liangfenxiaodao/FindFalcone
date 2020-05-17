@@ -11,4 +11,8 @@ import Foundation
 struct Result: Codable {
     let status: String
     let planet_name: String?
+
+    var isSuccess: Bool {
+        return status == "success"
+    }
 }

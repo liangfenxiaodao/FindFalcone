@@ -35,6 +35,12 @@ class DestinationUseCase {
         }
     }
 
+    func getTotalTimeTaken() -> Int {
+        return getDestinations().reduce(0, { (accumulation, enumeration) -> Int in
+            return accumulation + enumeration.timeTaken
+        })
+    }
+
     private func updateAvailableVehicles(with vehicle: Vehicle) {
         let updatedVehicle = Vehicle(name: vehicle.name, total: vehicle.total - 1, distance: vehicle.distance, speed: vehicle.speed)
         guard let index = DataStore.shared.availableVehicles.firstIndex(of: vehicle) else { return }
