@@ -36,6 +36,13 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-nZ-sTA">
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-7p-6Cf">
+                                <rect key="frame" x="182" y="778" width="50" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="N6v-Va-5tM"/>
+                                </constraints>
+                                <state key="normal" title="Restart"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -48,7 +55,9 @@
                             <constraint firstItem="ndT-nZ-sTA" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="Npl-xK-x5I"/>
                             <constraint firstItem="aOH-Gi-7dJ" firstAttribute="trailing" secondItem="BxG-cp-P0j" secondAttribute="trailing" constant="-20" id="gic-v4-xhe"/>
                             <constraint firstItem="aOH-Gi-7dJ" firstAttribute="top" secondItem="BxG-cp-P0j" secondAttribute="top" constant="61" id="mED-CK-zct"/>
+                            <constraint firstItem="ggz-7p-6Cf" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="nN6-NT-0Be"/>
                             <constraint firstItem="PRK-Fe-yBu" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="sW8-rB-89c"/>
+                            <constraint firstItem="BxG-cp-P0j" firstAttribute="bottom" secondItem="ggz-7p-6Cf" secondAttribute="bottom" constant="40" id="wa6-T3-CCH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BxG-cp-P0j"/>
                     </view>

@@ -15,7 +15,7 @@ class DestinationViewController: UIViewController {
 
     @IBOutlet weak var planetPickerView: UIPickerView!
     @IBOutlet weak var vehiclePickerView: UIPickerView!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var timeTakenLabel: UILabel!
 
@@ -30,11 +30,11 @@ class DestinationViewController: UIViewController {
         vehiclePickerView.delegate = self
         vehiclePickerView.dataSource = self
 
-        button.isEnabled = false
-        button.addTarget(self, action: #selector(goToNextStep), for: .touchUpInside)
+        nextButton.isEnabled = false
+        nextButton.addTarget(self, action: #selector(goToNextStep), for: .touchUpInside)
 
         destinationLabel.text = viewModel.destinationLabelText
-        button.setTitle(viewModel.buttonText, for: .normal)
+        nextButton.setTitle(viewModel.buttonText, for: .normal)
 
         setupDataBinding()
     }
@@ -70,7 +70,7 @@ class DestinationViewController: UIViewController {
         vehiclePickerView.reloadAllComponents()
         vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
         pickerView(vehiclePickerView, didSelectRow: 0, inComponent: 0)
-        button.isEnabled = vehiclePickerView.numberOfRows(inComponent: 0) != 0
+        nextButton.isEnabled = vehiclePickerView.numberOfRows(inComponent: 0) != 0
     }
 
     @objc private func goToNextStep() {

@@ -48,12 +48,12 @@
                                             <constraint firstAttribute="height" constant="150" id="lMQ-hp-o6H"/>
                                         </constraints>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nl8-Wb-qfx">
-                                        <rect key="frame" x="184" y="748" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nl8-Wb-qfx" userLabel="next">
+                                        <rect key="frame" x="191" y="674" width="32" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="sFU-CT-W67"/>
+                                            <constraint firstAttribute="height" constant="44" id="sFU-CT-W67"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Next"/>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k40-XD-5U4" userLabel="timeTakenLabel">
                                         <rect key="frame" x="207" y="560" width="0.0" height="0.0"/>
@@ -61,14 +61,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-Qe-RDR">
+                                        <rect key="frame" x="182" y="734" width="50" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="qRH-Ie-dTa"/>
+                                        </constraints>
+                                        <state key="normal" title="Restart"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VBu-Ul-Nfr" firstAttribute="width" secondItem="SHK-Q9-fIR" secondAttribute="width" multiplier="0.772947" id="2Ly-5M-CCM"/>
                                     <constraint firstItem="VBu-Ul-Nfr" firstAttribute="leading" secondItem="P71-aK-Q79" secondAttribute="leading" id="6dI-vP-imy"/>
                                     <constraint firstItem="VBu-Ul-Nfr" firstAttribute="top" secondItem="FE0-1b-4BI" secondAttribute="bottom" constant="30" id="A6r-U2-09X"/>
-                                    <constraint firstAttribute="bottom" secondItem="Nl8-Wb-qfx" secondAttribute="bottom" constant="40" id="DdP-g4-SIF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nl8-Wb-qfx" secondAttribute="bottom" constant="100" id="DdP-g4-SIF"/>
+                                    <constraint firstAttribute="bottom" secondItem="k6N-Qe-RDR" secondAttribute="bottom" constant="40" id="JQA-ub-ydY"/>
                                     <constraint firstItem="FE0-1b-4BI" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="LZm-go-zmo"/>
                                     <constraint firstItem="FE0-1b-4BI" firstAttribute="top" secondItem="wbL-JO-6lE" secondAttribute="bottom" constant="40" id="NL1-Fd-bu2"/>
+                                    <constraint firstItem="k6N-Qe-RDR" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="Nm0-rb-3wm"/>
                                     <constraint firstItem="wbL-JO-6lE" firstAttribute="top" secondItem="SHK-Q9-fIR" secondAttribute="top" constant="40" id="R6M-hY-lVx"/>
                                     <constraint firstItem="wbL-JO-6lE" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="Yia-hj-wvj"/>
                                     <constraint firstItem="k40-XD-5U4" firstAttribute="centerX" secondItem="SHK-Q9-fIR" secondAttribute="centerX" id="a3w-4k-mzs"/>
@@ -88,15 +97,15 @@
                             <constraint firstItem="Ye2-X0-n6Y" firstAttribute="trailing" secondItem="SHK-Q9-fIR" secondAttribute="trailing" id="6KC-3L-TN3"/>
                             <constraint firstItem="Ye2-X0-n6Y" firstAttribute="bottom" secondItem="SHK-Q9-fIR" secondAttribute="bottom" id="XoW-eT-Qxk"/>
                             <constraint firstItem="SHK-Q9-fIR" firstAttribute="top" secondItem="Ye2-X0-n6Y" secondAttribute="top" id="hTS-g1-CBh"/>
-                            <constraint firstItem="Ye2-X0-n6Y" firstAttribute="bottom" secondItem="Nl8-Wb-qfx" secondAttribute="bottom" constant="40" id="uBc-41-cru"/>
+                            <constraint firstItem="Ye2-X0-n6Y" firstAttribute="bottom" secondItem="Nl8-Wb-qfx" secondAttribute="bottom" constant="100" id="uBc-41-cru"/>
                             <constraint firstItem="SHK-Q9-fIR" firstAttribute="leading" secondItem="Ye2-X0-n6Y" secondAttribute="leading" id="ugN-5b-pzJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ye2-X0-n6Y"/>
                     </view>
                     <navigationItem key="navigationItem" id="QR4-py-wFa"/>
                     <connections>
-                        <outlet property="button" destination="Nl8-Wb-qfx" id="Ztz-MP-IS2"/>
                         <outlet property="destinationLabel" destination="FE0-1b-4BI" id="LYz-OH-euL"/>
+                        <outlet property="nextButton" destination="Nl8-Wb-qfx" id="Hcm-1m-Jfj"/>
                         <outlet property="planetPickerView" destination="VBu-Ul-Nfr" id="KXi-lA-hZX"/>
                         <outlet property="timeTakenLabel" destination="k40-XD-5U4" id="Sy7-5Q-hii"/>
                         <outlet property="vehiclePickerView" destination="P71-aK-Q79" id="4SR-I2-sUU"/>
