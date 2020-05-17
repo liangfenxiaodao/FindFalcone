@@ -11,7 +11,7 @@ import RxSwift
 
 class DestinationViewController: UIViewController {
     private var viewModel: DestinationViewModel = DestinationViewModel()
-    private let disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
 
     @IBOutlet weak var planetPickerView: UIPickerView!
     @IBOutlet weak var vehiclePickerView: UIPickerView!
@@ -74,6 +74,7 @@ class DestinationViewController: UIViewController {
     }
 
     @objc private func goToNextStep() {
+        disposeBag = DisposeBag()
         guard let next = viewModel.goToNextStep() else { return }
         route(to: next)
     }
