@@ -42,10 +42,7 @@ class DestinationViewController: UIViewController {
     private func setupDataBinding() {
         viewModel.loadAvailablePlanets()
             .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.reloadPlanetPickerView()
-                self.reloadVehiclePickerView()
-                self.button.isEnabled = true
+                self?.reloadPlanetPickerView()
             })
             .disposed(by: disposeBag)
 
@@ -73,7 +70,7 @@ class DestinationViewController: UIViewController {
         vehiclePickerView.reloadAllComponents()
         vehiclePickerView.selectRow(0, inComponent: 0, animated: true)
         pickerView(vehiclePickerView, didSelectRow: 0, inComponent: 0)
-        button.isEnabled = true
+        button.isEnabled = vehiclePickerView.numberOfRows(inComponent: 0) != 0
     }
 
     @objc private func goToNextStep() {

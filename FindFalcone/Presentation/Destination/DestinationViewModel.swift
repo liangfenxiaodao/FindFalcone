@@ -22,7 +22,6 @@ class DestinationViewModel {
 
     func loadAvailablePlanets() -> Observable<[Planet]> {
         return usecase.getAvailablePlanets()
-            .filter { !$0.isEmpty }
             .map { [weak self] planets in
                 self?.avaiablePlanets = planets
                 return planets
@@ -41,7 +40,6 @@ class DestinationViewModel {
                 self?.avaiableVehicles = filterVehicles
                 return filterVehicles
             }
-            .filter { !$0.isEmpty }
     }
 
     func selectPlanet(index: Int) {
@@ -50,8 +48,11 @@ class DestinationViewModel {
     }
 
     func selectVehicle(index: Int) {
-        guard !avaiableVehicles.isEmpty else { return }
-        selectedVehicle.accept(avaiableVehicles[index])
+        if index == avaiableVehicles.count {
+            selectedVehicle.accept(nil)
+        } else {
+            selectedVehicle.accept(avaiableVehicles[index])
+        }
     }
 
     var buttonText: String {
