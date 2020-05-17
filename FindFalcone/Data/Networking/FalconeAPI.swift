@@ -13,7 +13,7 @@ enum FalconeAPI {
     case getPlanets
     case getVehicles
     case getToken
-    case findFalcone
+    case findFalcone(token: Token, destinations: [Destination])
 }
 
 extension FalconeAPI: TargetType {
@@ -43,8 +43,8 @@ extension FalconeAPI: TargetType {
             return .requestParameters(parameters: [:], encoding: URLEncoding.queryString)
         case .getToken:
             return .requestPlain
-        case .findFalcone:
-            return .requestPlain
+        case let .findFalcone(token, destinations):
+            return .requestJSONEncodable(FindFalconeRequest(token: token, destinations: destinations))
         }
     }
 

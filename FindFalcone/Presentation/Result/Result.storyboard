@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n95-Ac-u5Z">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Result View Controller-->
+        <scene sceneID="BWP-Qt-5yk">
+            <objects>
+                <viewController id="n95-Ac-u5Z" customClass="ResultViewController" customModule="FindFalcone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="egG-AD-b7L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! Congradulations on Finding Falcone. King Shan is mightly pleased." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-Gi-7dJ" userLabel="resultLabel">
+                                <rect key="frame" x="20" y="105" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRK-Fe-yBu" userLabel="timeTakenLabel">
+                                <rect key="frame" x="161" y="209" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="planet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lta-vP-Qhu" userLabel="planetLabel">
+                                <rect key="frame" x="170" y="261" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aOH-Gi-7dJ" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="Bcl-85-Xdl"/>
+                            <constraint firstItem="BxG-cp-P0j" firstAttribute="leading" secondItem="aOH-Gi-7dJ" secondAttribute="leading" constant="-20" id="Bki-gS-yPp"/>
+                            <constraint firstItem="aOH-Gi-7dJ" firstAttribute="trailing" secondItem="BxG-cp-P0j" secondAttribute="trailing" constant="-20" id="gic-v4-xhe"/>
+                            <constraint firstItem="aOH-Gi-7dJ" firstAttribute="top" secondItem="BxG-cp-P0j" secondAttribute="top" constant="61" id="mED-CK-zct"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BxG-cp-P0j"/>
+                    </view>
+                    <connections>
+                        <outlet property="planetLabel" destination="lta-vP-Qhu" id="RNl-8U-Q6X"/>
+                        <outlet property="resultLabel" destination="aOH-Gi-7dJ" id="7Vs-ZD-bsy"/>
+                        <outlet property="timeTakenLabel" destination="PRK-Fe-yBu" id="Yeb-EF-v3R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqZ-1k-fAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="138"/>
+        </scene>
+    </scenes>
+</document>

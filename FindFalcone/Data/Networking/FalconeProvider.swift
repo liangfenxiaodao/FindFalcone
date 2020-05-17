@@ -10,37 +10,35 @@ import Foundation
 import Moya
 import RxSwift
 
-struct FalconeProvider {
+class FalconeProvider {
     let provider = MoyaProvider<FalconeAPI>()
 
     func getPlanets() -> Observable<[Planet]> {
-        let request = provider.rx.request(.getPlanets)
-        let mapping = { response -> Observable<[Planet]> in
-            self.mapResponseTo(response: response)
-        }
-        return executeRequest(request: request, mapping: mapping)
+        return executeRequest(provider.rx.request(.getPlanets))
     }
 
     func getVehicles() -> Observable<[Vehicle]> {
-        let request = provider.rx.request(.getVehicles)
-        let mapping = { response -> Observable<[Vehicle]> in
-            self.mapResponseTo(response: response)
-        }
-        return executeRequest(request: request, mapping: mapping)
+        return executeRequest(provider.rx.request(.getVehicles))
     }
 
-    private func executeRequest<T>(request: PrimitiveSequence<SingleTrait, Response>, mapping: @escaping (Response) -> Observable<T> ) -> Observable<T> where T: Codable {
+    func getToken() -> Observable<Token> {
+        return executeRequest(provider.rx.request(.getToken))
+    }
+
+    func findFalcone(token: Token, destinations: [Destination]) -> Observable<Result> {
+        return executeRequest(provider.rx.request(.findFalcone(token: token, destinations: destinations)))
+    }
+
+    private func executeRequest<T>(_ request: PrimitiveSequence<SingleTrait, Response>) -> Observable<T> where T: Codable {
         return Observable.just(true)
-            .flatMap { _ in
-                request
-        }
-        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
-        .flatMap { (response) -> Observable<T> in
-            return mapping(response)
-        }
-        .catchError({ (error) in
-            return Observable.error(error)
-        })
+            .flatMap { _ in request }
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+            .flatMap { [unowned self] (response) -> Observable<T> in
+                return self.mapResponseTo(response: response)
+            }
+            .catchError({ (error) in
+                return Observable.error(error)
+            })
     }
 
     private func mapResponseTo<T>(response: Response) -> Observable<T> where T: Codable {
