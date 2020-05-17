@@ -16,6 +16,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var timeTakenLabel: UILabel!
     @IBOutlet weak var planetLabel: UILabel!
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     let viewModel = ResultViewModel()
     let disposeBag = DisposeBag()
 
@@ -24,8 +25,11 @@ class ResultViewController: UIViewController {
         navigationItem.title = "Find Falcone!"
         navigationItem.hidesBackButton = true
 
+        indicator.startAnimating()
+
         viewModel.findFalcone()
-            .subscribe(onNext: { result in
+            .subscribe(onNext: { [weak self] result in
+                self?.indicator.stopAnimating()
                 print(result)
             })
             .disposed(by: disposeBag)

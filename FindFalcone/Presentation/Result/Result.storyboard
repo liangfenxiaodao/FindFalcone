@@ -15,37 +15,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! Congradulations on Finding Falcone. King Shan is mightly pleased." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-Gi-7dJ" userLabel="resultLabel">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success! Congradulations on Finding Falcone. King Shan is mightly pleased." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-Gi-7dJ" userLabel="resultLabel">
                                 <rect key="frame" x="20" y="105" width="374" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRK-Fe-yBu" userLabel="timeTakenLabel">
-                                <rect key="frame" x="161" y="209" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRK-Fe-yBu" userLabel="timeTakenLabel">
+                                <rect key="frame" x="167" y="209" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="planet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lta-vP-Qhu" userLabel="planetLabel">
-                                <rect key="frame" x="170" y="261" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="planet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lta-vP-Qhu" userLabel="planetLabel">
+                                <rect key="frame" x="183" y="261" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-nZ-sTA">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="aOH-Gi-7dJ" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="Bcl-85-Xdl"/>
                             <constraint firstItem="BxG-cp-P0j" firstAttribute="leading" secondItem="aOH-Gi-7dJ" secondAttribute="leading" constant="-20" id="Bki-gS-yPp"/>
+                            <constraint firstItem="lta-vP-Qhu" firstAttribute="top" secondItem="PRK-Fe-yBu" secondAttribute="bottom" constant="31" id="CBs-AI-87s"/>
+                            <constraint firstItem="ndT-nZ-sTA" firstAttribute="centerY" secondItem="BxG-cp-P0j" secondAttribute="centerY" id="EbL-ul-R8k"/>
+                            <constraint firstItem="PRK-Fe-yBu" firstAttribute="top" secondItem="aOH-Gi-7dJ" secondAttribute="bottom" constant="63" id="FAK-F5-Bvg"/>
+                            <constraint firstItem="lta-vP-Qhu" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="Jbt-qV-kKu"/>
+                            <constraint firstItem="ndT-nZ-sTA" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="Npl-xK-x5I"/>
                             <constraint firstItem="aOH-Gi-7dJ" firstAttribute="trailing" secondItem="BxG-cp-P0j" secondAttribute="trailing" constant="-20" id="gic-v4-xhe"/>
                             <constraint firstItem="aOH-Gi-7dJ" firstAttribute="top" secondItem="BxG-cp-P0j" secondAttribute="top" constant="61" id="mED-CK-zct"/>
+                            <constraint firstItem="PRK-Fe-yBu" firstAttribute="centerX" secondItem="BxG-cp-P0j" secondAttribute="centerX" id="sW8-rB-89c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BxG-cp-P0j"/>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="ndT-nZ-sTA" id="f93-oU-tle"/>
                         <outlet property="planetLabel" destination="lta-vP-Qhu" id="RNl-8U-Q6X"/>
                         <outlet property="resultLabel" destination="aOH-Gi-7dJ" id="7Vs-ZD-bsy"/>
                         <outlet property="timeTakenLabel" destination="PRK-Fe-yBu" id="Yeb-EF-v3R"/>
