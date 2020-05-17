@@ -107,6 +107,7 @@
                         <outlet property="destinationLabel" destination="FE0-1b-4BI" id="LYz-OH-euL"/>
                         <outlet property="nextButton" destination="Nl8-Wb-qfx" id="Hcm-1m-Jfj"/>
                         <outlet property="planetPickerView" destination="VBu-Ul-Nfr" id="KXi-lA-hZX"/>
+                        <outlet property="restartButton" destination="k6N-Qe-RDR" id="Wic-zG-nhi"/>
                         <outlet property="timeTakenLabel" destination="k40-XD-5U4" id="Sy7-5Q-hii"/>
                         <outlet property="vehiclePickerView" destination="P71-aK-Q79" id="4SR-I2-sUU"/>
                     </connections>

@@ -67,6 +67,10 @@ class DestinationViewModel {
         return "Destination: \(usecase.getDestinations().count + 1)"
     }
 
+    var shouldHideResetButton: Bool {
+        return usecase.getDestinations().count == 0
+    }
+
     var timeTakenText: Observable<String?> {
         Observable.combineLatest(selectedPlanet, selectedVehicle)
             .map { [weak self] (planet, vehicle) in

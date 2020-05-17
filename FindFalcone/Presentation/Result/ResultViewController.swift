@@ -16,6 +16,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var timeTakenLabel: UILabel!
     @IBOutlet weak var planetLabel: UILabel!
 
+    @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     let viewModel = ResultViewModel()
     let disposeBag = DisposeBag()
@@ -41,6 +42,7 @@ class ResultViewController: UIViewController {
 
     private func configure(with result: Result) {
         resultLabel.isHidden = false
+        restartButton.isHidden = false
         if result.isSuccess {
             resultLabel.text = viewModel.successResultText
             timeTakenLabel.isHidden = false

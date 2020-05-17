@@ -36,7 +36,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-nZ-sTA">
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-7p-6Cf">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-7p-6Cf">
                                 <rect key="frame" x="182" y="778" width="50" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="N6v-Va-5tM"/>
@@ -64,6 +64,7 @@
                     <connections>
                         <outlet property="indicator" destination="ndT-nZ-sTA" id="f93-oU-tle"/>
                         <outlet property="planetLabel" destination="lta-vP-Qhu" id="RNl-8U-Q6X"/>
+                        <outlet property="restartButton" destination="ggz-7p-6Cf" id="Inu-gB-9QD"/>
                         <outlet property="resultLabel" destination="aOH-Gi-7dJ" id="7Vs-ZD-bsy"/>
                         <outlet property="timeTakenLabel" destination="PRK-Fe-yBu" id="Yeb-EF-v3R"/>
                     </connections>

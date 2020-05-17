@@ -18,6 +18,7 @@ class DestinationViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var timeTakenLabel: UILabel!
+    @IBOutlet weak var restartButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,8 @@ class DestinationViewController: UIViewController {
 
         destinationLabel.text = viewModel.destinationLabelText
         nextButton.setTitle(viewModel.buttonText, for: .normal)
+
+        restartButton.isHidden = viewModel.shouldHideResetButton
 
         setupDataBinding()
     }
